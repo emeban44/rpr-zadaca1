@@ -26,7 +26,7 @@ public class Main {
                 "\tBlack move: Nc6\n" +
                 "\tWhite move: Bb5\n" +
                 "\tBlack move: a6\n" +
-                "\tWhite move: Ba4\n" +
+                "\tWhite move: Ba4\n" +  
                 "\tBlack move: Nf6\n" +
                 "\n" +
                 "Zadaću treba realizirati tako što će se najprije napraviti fork projekta \"rpr-zadaca1\" koji sadrži dio testova, a zatim implementirati klase i preostale testove kako bi pokrivenost koda testovima bila 100%.\n" +
