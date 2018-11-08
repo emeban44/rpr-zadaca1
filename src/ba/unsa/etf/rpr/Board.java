@@ -50,6 +50,15 @@ public class Board {
         board[6][5] = new Pawn( "F7", ChessPiece.Color.BLACK);
         board[6][6] = new Pawn( "G7", ChessPiece.Color.BLACK);
         board[6][7] = new Pawn( "H7", ChessPiece.Color.BLACK);
+
+        // Prazna mjesta
+        for (int i = 0; i<8; i++){
+            board[2][i]= null;
+            board[3][i]= null;
+            board[4][i]= null;
+            board[5][i]= null;
+        }
+
     }
 
 
