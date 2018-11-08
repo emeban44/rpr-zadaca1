@@ -24,5 +24,5 @@ public class Pawn extends ChessPiece {
         if (!ValidnostPozicije(position)) throw new IllegalArgumentException();
     }
 
-    
+
 }
