@@ -17,7 +17,7 @@ public abstract class ChessPiece {
 
         public abstract void move(String position);
 
-        ChessPiece(String pozicija, Color boja){
+            ChessPiece(String pozicija, Color boja){
             this.position=pozicija;
             this.color=boja;
         }
