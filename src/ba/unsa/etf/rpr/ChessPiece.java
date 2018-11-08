@@ -4,7 +4,7 @@ public abstract class ChessPiece {
 
         String position;
 
-        public enum Color{
+        public static enum Color{
             WHITE,
             BLACK
         }
