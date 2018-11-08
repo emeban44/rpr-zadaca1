@@ -16,10 +16,10 @@ public abstract class ChessPiece {
 
         public abstract Color getColor();
 
-        public abstract void move(String position);
+        public abstract void move(String position) throws IllegalChessMoveException, IllegalArgumentException;
 
-            ChessPiece(String pozicija, Color boja){
-                if (!ValidnostPozicije(position)) throw new IllegalArgumentException();
+            ChessPiece(String pozicija, Color boja)  {
+                if (!ValidnostPozicije(pozicija)) throw new IllegalArgumentException();
             this.position=pozicija;
             this.color=boja;
         }
@@ -28,7 +28,7 @@ public abstract class ChessPiece {
             return false;
         }
         char prvaoznaka = position.charAt(0);
-        List<Character> prvihoznakalista = Arrays.asList('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h');
+        List<Character> prvihoznakalista = Arrays.asList('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H');
         if (!prvihoznakalista.contains(prvaoznaka)){
             return false;
         }

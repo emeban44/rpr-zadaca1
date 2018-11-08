@@ -65,4 +65,12 @@ public class Board {
     void move(Class type, ChessPiece.Color color, String position){
 
     }
+
+    void move(String oldPosition, String newPosition){
+
+    }
+
+    boolean isCheck(ChessPiece.Color boja){
+    return false;
+    }
 }
