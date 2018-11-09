@@ -12,12 +12,12 @@ public class King extends ChessPiece{
 
     @Override
     public String getPosition() {
-        return null;
+        return this.position;
     }
 
     @Override
     public Color getColor() {
-        return null;
+        return this.color;
     }
 
     @Override
