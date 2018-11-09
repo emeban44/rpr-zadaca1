@@ -3,20 +3,24 @@ import java.util.Arrays;
 import java.util.List;
 public abstract class ChessPiece {
 
-        String position;
+        protected String position;
 
         public static enum Color{
             WHITE,
             BLACK
         }
 
-        Color color;
+        protected Color color;
 
         public abstract String getPosition();
 
         public abstract Color getColor();
 
-        public abstract void move(String position) throws IllegalChessMoveException, IllegalArgumentException;
+        public void move(String position) throws IllegalChessMoveException, IllegalArgumentException{
+            if (!ValidnostPozicije(position)) throw new IllegalArgumentException();
+        }
+
+
 
             ChessPiece(String pozicija, Color boja)  {
                 if (!ValidnostPozicije(pozicija)) throw new IllegalArgumentException();
@@ -24,6 +28,7 @@ public abstract class ChessPiece {
             this.color=boja;
         }
     public boolean ValidnostPozicije(String position){
+            position=position.toUpperCase();
         if (position.length() != 2) {
             return false;
         }
