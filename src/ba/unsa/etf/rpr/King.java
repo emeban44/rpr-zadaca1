@@ -10,15 +10,7 @@ public class King extends ChessPiece{
 
     }
 
-    @Override
-    public String getPosition() {
-        return this.position;
-    }
 
-    @Override
-    public Color getColor() {
-        return this.color;
-    }
 
     @Override
     public void move(String position) throws IllegalChessMoveException, IllegalArgumentException {

@@ -9,15 +9,6 @@ public class Pawn extends ChessPiece {
         super(pozicija, boja);
     }
 
-    @Override
-    public String getPosition() {
-        return this.position;
-    }
-
-    @Override
-    public Color getColor() {
-        return null;
-    }
 
     @Override
     public void move(String position) {

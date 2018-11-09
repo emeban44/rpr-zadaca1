@@ -12,9 +12,13 @@ public abstract class ChessPiece {
 
         protected Color color;
 
-        public abstract String getPosition();
+        public  String getPosition(){
+            return this.position;
+        }
 
-        public abstract Color getColor();
+        public Color getColor(){
+            return this.color;
+        }
 
         public void move(String position) throws IllegalChessMoveException, IllegalArgumentException{
             if (!ValidnostPozicije(position)) throw new IllegalArgumentException();

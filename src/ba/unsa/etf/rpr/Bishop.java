@@ -6,15 +6,7 @@ public class Bishop extends ChessPiece {
         super(pozicija, boja);
     }
 
-    @Override
-    public String getPosition() {
-        return null;
-    }
 
-    @Override
-    public Color getColor() {
-        return null;
-    }
 
     @Override
     public void move(String position) throws IllegalChessMoveException {

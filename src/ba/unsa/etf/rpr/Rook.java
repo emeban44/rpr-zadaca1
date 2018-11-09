@@ -6,19 +6,38 @@ public class Rook extends ChessPiece {
         super(pozicija, boja);
     }
 
-    @Override
-    public String getPosition() {
-        return null;
-    }
+
 
     @Override
-    public Color getColor() {
-        return null;
-    }
-
-    @Override
-    public void move(String position) {
+    public void move(String position) throws IllegalChessMoveException {
         if (!ValidnostPozicije(position)) throw new IllegalArgumentException();
+
+        boolean provjera=false;
+        for (int i = 1; i<=8; i++){
+
+            //pomjeranje pravo
+            if (this.position.charAt(0) == position.charAt(0) && this.position.charAt(1)+i == position.charAt(1)){
+                this.position=position; provjera=true;
+            }
+
+            //pomjeranje rikverc
+            else if(this.position.charAt(0) == position.charAt(0) && this.position.charAt(1)-i == position.charAt(1)){
+                this.position=position; provjera=true;
+            }
+
+            //pomjeranje desno
+            else if(this.position.charAt(0)+i == position.charAt(0) && this.position.charAt(1) == position.charAt(1)){
+                this.position=position; provjera=true;
+            }
+
+            //pomjeranje lijevo
+            else if(this.position.charAt(0)-i == position.charAt(0) && this.position.charAt(1) == position.charAt(1)){
+                this.position=position; provjera=true;
+            }
+        }
+
+        if(!provjera) throw new IllegalChessMoveException();
+
     }
 
 
