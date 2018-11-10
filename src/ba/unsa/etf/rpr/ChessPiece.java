@@ -30,7 +30,7 @@ public abstract class ChessPiece {
 
             ChessPiece(String pozicija, Color boja)  {
                 if (!ValidnostPozicije(pozicija)) throw new IllegalArgumentException();
-            this.position=pozicija;
+            this.position=pozicija.toUpperCase();
             this.color=boja;
         }
     public boolean ValidnostPozicije(String position){

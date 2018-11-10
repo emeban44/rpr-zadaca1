@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Board {
 
-    ChessPiece[][] board = new ChessPiece[8][8];
+    protected ChessPiece[][] board = new ChessPiece[8][8];
 
     Board(){
         // Topovi
@@ -62,8 +62,22 @@ public class Board {
     }
 
 
-    void move(Class type, ChessPiece.Color color, String position){
+    void move(Class type, ChessPiece.Color color, String position) throws IllegalChessMoveException {
 
+        for (int i = 0; i<8; i++){
+            for (int j = 0; j<8; j++){
+                if (board[i][j].getClass() == type && board[i][j].getColor() == color){
+                    board[i][j].move(position);
+                    for (int k = 0; k<8; k++){
+                        for (int y = 0; y<8; y++){
+                            if (board[k][y].getPosition() == position){
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     void move(String oldPosition, String newPosition){

@@ -26,13 +26,13 @@ class RookTest {
     void desno() {
         Rook p = new Rook("A1", ChessPiece.Color.WHITE);
         assertDoesNotThrow(
-                () -> p.move("H1")
+                () -> p.move("h1")
         );
     }
 
     @Test
     void lijevo() {
-        Rook p = new Rook("H8", ChessPiece.Color.BLACK);
+        Rook p = new Rook("h8", ChessPiece.Color.BLACK);
         assertDoesNotThrow(
                 () -> p.move("A8")
         );

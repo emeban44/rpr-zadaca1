@@ -12,7 +12,7 @@ public class Knight extends ChessPiece {
     public void move(String position) throws IllegalChessMoveException {
         super.move(position);
         //  if (!ValidnostPozicije(position)) throw new IllegalArgumentException();
-
+        position=position.toUpperCase();
         //pomjeranje desno horizontalno naprijed
         if (this.position.charAt(0)+2 == position.charAt(0) && this.position.charAt(1)+1 == position.charAt(1)){
             this.position=position;

@@ -15,6 +15,7 @@ public class Pawn extends ChessPiece {
     public void move(String position) throws IllegalChessMoveException {
         super.move(position);
         //if (!ValidnostPozicije(position)) throw new IllegalArgumentException();
+        position=position.toUpperCase();
         boolean provjera=false;
         //pomjeranje crne figure naprijed kad je prvi potez
         //pomjeranje bijele figure naprijed kad je prvi potez
