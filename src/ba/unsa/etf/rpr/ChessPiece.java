@@ -5,7 +5,7 @@ public abstract class ChessPiece {
 
         protected String position;
 
-
+    public static boolean PrviPotez=false;
 
     public static enum Color{
             WHITE,
