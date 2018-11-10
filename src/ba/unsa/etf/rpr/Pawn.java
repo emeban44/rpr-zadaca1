@@ -47,6 +47,20 @@ public class Pawn extends ChessPiece {
                 if (PrviPotez == false) PrviPotez = true;
             }
 
+           //pomjeranje dijagonalno
+           else if (this.position.charAt(0)==position.charAt(0)+1 && this.position.charAt(1)==position.charAt(1)+1 && this.getColor() == Color.BLACK){
+               this.position=position; PrviPotez = true; provjera=true;
+           }
+           else if (this.position.charAt(0)+1==position.charAt(0) && this.position.charAt(1)==position.charAt(1)+1 && this.getColor() == Color.BLACK){
+               this.position=position; PrviPotez = true; provjera=true;
+           }
+           else if (this.position.charAt(0)==position.charAt(0)-1 && this.position.charAt(1)==position.charAt(1)-1 && this.getColor() == Color.WHITE){
+               this.position=position; PrviPotez = true; provjera=true;
+           }
+           else if (this.position.charAt(0)==position.charAt(0)+1 && this.position.charAt(1)==position.charAt(1)-1 && this.getColor() == Color.WHITE){
+               this.position=position; PrviPotez = true; provjera=true;
+           }
+
         if (!provjera) throw new IllegalChessMoveException();
     }
 

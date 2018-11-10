@@ -38,13 +38,13 @@ public class King extends ChessPiece{
         }
 
         //pomjeranje dijagonalno
-        else if (this.position.charAt(0)==position.charAt(0)-1 && this.position.charAt(1)==position.charAt(1)-1){
+        else if (this.position.charAt(0)==position.charAt(0)+1 && this.position.charAt(1)==position.charAt(1)+1){
             this.position=position;
         }
         else if (this.position.charAt(0)+1==position.charAt(0) && this.position.charAt(1)==position.charAt(1)+1){
             this.position=position;
         }
-        else if (this.position.charAt(0)==position.charAt(0)+1 && this.position.charAt(1)==position.charAt(1)+1){
+        else if (this.position.charAt(0)==position.charAt(0)-1 && this.position.charAt(1)==position.charAt(1)-1){
             this.position=position;
         }
         else if (this.position.charAt(0)==position.charAt(0)+1 && this.position.charAt(1)==position.charAt(1)-1){

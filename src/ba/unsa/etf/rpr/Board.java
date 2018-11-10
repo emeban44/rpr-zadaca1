@@ -117,8 +117,75 @@ public class Board {
         if (!provjera) throw new IllegalChessMoveException();
     }
 
-    void move(String oldPosition, String newPosition){
+    void move(String oldPosition, String newPosition) throws IllegalChessMoveException {
+        boolean DaLiPostoji=false;
+        Class type=null;
+        ChessPiece.Color color=null;
+        for ( int i = 0; i<8; i++){
+            for ( int j = 0; j<8; j++){
+                if (board[i][j] == null) continue;
+                else if (Objects.equals(board[i][j].getPosition(), oldPosition)) {
+                    DaLiPostoji=true;
+                    type = board[i][j].getClass();
+                    color = board[i][j].getColor();
+                }
+            }
+        }
 
+        if (!DaLiPostoji) throw new IllegalArgumentException();
+
+        String position = newPosition;
+        boolean provjera=false;
+        int slovo=0;
+        int broj=0;
+        for (int i = 0; i<8; i++){
+            for (int j = 0; j<8; j++){
+                if (provjera) break;
+                if (board[i][j]==null) continue;
+                if (board[i][j].getClass() == type && board[i][j].getColor() == color && !provjera){
+                    try{                 board[i][j].move(position); } catch(IllegalChessMoveException e){ continue; }
+                    for (int k = 0; k<8; k++){
+                        for (int y = 0; y<8; y++){
+                            if (i == k && j == y) continue;
+                            else if (k == 7 && y == 7){
+                                if (position.charAt(0) == 'A') slovo=0;
+                                else if (position.charAt(0) == 'B') slovo=1;
+                                else if (position.charAt(0) == 'C') slovo=2;
+                                else if (position.charAt(0) == 'D') slovo=3;
+                                else if (position.charAt(0) == 'E') slovo=4;
+                                else if (position.charAt(0) == 'F') slovo=5;
+                                else if (position.charAt(0) == 'G') slovo=6;
+                                else if (position.charAt(0) == 'H') slovo=7;
+                                if (position.charAt(1) == '1') broj=0;
+                                else if (position.charAt(1) == '2') broj=1;
+                                else if (position.charAt(1) == '3') broj=2;
+                                else if (position.charAt(1) == '4') broj=3;
+                                else if (position.charAt(1) == '5') broj=4;
+                                else if (position.charAt(1) == '6') broj=5;
+                                else if (position.charAt(1) == '7') broj=6;
+                                else if (position.charAt(1) == '8') broj=7;
+                                board[broj][slovo]=board[i][j];
+                                board[i][j]=null;
+                                provjera=true;
+                                break;
+                            }
+                            if (board[k][y]==null) continue;
+                            if (Objects.equals(board[k][y].getPosition(), position) && board[k][y].getColor() != color){
+                                board[k][y]=null;
+                                board[k][y]= board[i][j];
+                                board[i][j]= null;
+                                provjera=true;
+                            }
+                            else if (Objects.equals(board[k][y].getPosition(), position) && board[k][y].getColor() == color){
+                                throw new IllegalChessMoveException();
+                            }
+
+                        }
+                    }
+                }
+            } if (provjera) break;
+        }
+        if (!provjera) throw new IllegalChessMoveException();
     }
 
     boolean isCheck(ChessPiece.Color boja){

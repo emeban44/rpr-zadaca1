@@ -78,4 +78,39 @@ class KingTest {
                 () -> k.move("")
         );
     }
+
+    @org.junit.jupiter.api.Test
+    void move6() {
+        King p = new King("D2", ChessPiece.Color.WHITE);
+        assertDoesNotThrow(
+                () -> p.move("E3")
+        );
+
+    }
+    @org.junit.jupiter.api.Test
+    void move7() {
+        King p = new King("E8", ChessPiece.Color.BLACK);
+        assertDoesNotThrow(
+                () -> p.move("D7")
+        );
+
+    }
+
+    @org.junit.jupiter.api.Test
+    void move8() {
+        King p = new King("E8", ChessPiece.Color.BLACK);
+        assertDoesNotThrow(
+                () -> p.move("F7")
+        );
+
+    }
+
+    @org.junit.jupiter.api.Test
+    void move9() {
+        King p = new King("D2", ChessPiece.Color.WHITE);
+        assertDoesNotThrow(
+                () -> p.move("C3")
+        );
+
+    }
 }

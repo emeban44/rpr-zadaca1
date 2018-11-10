@@ -42,4 +42,40 @@ class PawnTest {
 
     }
 
+    @org.junit.jupiter.api.Test
+    void move5() {
+        Pawn p = new Pawn("A7", ChessPiece.Color.BLACK);
+        assertDoesNotThrow(
+                () -> p.move("B6")
+        );
+
+    }
+
+    @org.junit.jupiter.api.Test
+    void move6() {
+        Pawn p = new Pawn("D2", ChessPiece.Color.WHITE);
+        assertDoesNotThrow(
+                () -> p.move("E3")
+        );
+
+    }
+
+    @org.junit.jupiter.api.Test
+    void move7() {
+        Pawn p = new Pawn("D7", ChessPiece.Color.BLACK);
+        assertDoesNotThrow(
+                () -> p.move("C6")
+        );
+
+    }
+
+    @org.junit.jupiter.api.Test
+    void move8() {
+        Pawn p = new Pawn("G2", ChessPiece.Color.WHITE);
+        assertDoesNotThrow(
+                () -> p.move("H3")
+        );
+
+    }
+
 }
