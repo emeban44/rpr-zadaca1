@@ -75,6 +75,7 @@ public class Board {
    try{                 board[i][j].move(position); } catch(IllegalChessMoveException e){ continue; }
                     for (int k = 0; k<8; k++){
                         for (int y = 0; y<8; y++){
+                            if (provjera) break;
                             if (i == k && j == y) continue;
                             else if (k == 7 && y == 7){
                                 if (position.charAt(0) == 'A') slovo=0;
@@ -100,16 +101,16 @@ public class Board {
                             }
                             if (board[k][y]==null) continue;
                             if (Objects.equals(board[k][y].getPosition(), position) && board[k][y].getColor() != color){
-                                board[k][y]=null;
                                 board[k][y]= board[i][j];
                                 board[i][j]= null;
                                 provjera=true;
+                                break;
                             }
                             else if (Objects.equals(board[k][y].getPosition(), position) && board[k][y].getColor() == color){
                                 throw new IllegalChessMoveException();
                             }
 
-                        }
+                        } if (provjera) break;
                     }
                 }
             } if (provjera) break;
