@@ -147,6 +147,7 @@ public class Board {
                     try{                 board[i][j].move(position); } catch(IllegalChessMoveException e){ continue; }
                     for (int k = 0; k<8; k++){
                         for (int y = 0; y<8; y++){
+                            if (provjera) break;
                             if (i == k && j == y) continue;
                             else if (k == 7 && y == 7){
                                 if (position.charAt(0) == 'A') slovo=0;
@@ -190,6 +191,30 @@ public class Board {
     }
 
     boolean isCheck(ChessPiece.Color boja){
-    return false;
+
+
+        for (int i = 0; i<8; i++){
+            for ( int j = 0; j<8; j++){
+                if(i == 0 || j==0) continue;
+                if (board[i][j] != null && board[i][j].getClass() == King.class && board[i][j].getColor() == boja){
+                    if ( board[i-1][j] != null && board[i-1][j].getColor() != boja ){
+                        return true;
+                    }
+                    else if ( board[i][j-1]!= null && board[i][j-1].getColor() != boja){
+                        return true;
+                    }
+                    else if ( board[i-1][j-1] != null && board[i-1][j-1].getColor() != boja){
+                        return true;
+                    }
+                    else if (board[i][j+1] != null && board[i][j+1].getColor() != boja){
+                        return true;
+                    }
+                    else if (board[i-1][j+1] != null && board[i-1][j+1].getColor() != boja){
+                        return true;
+                    }
+
+                }
+            }
+        } return false;
     }
 }
