@@ -5,8 +5,7 @@ public abstract class ChessPiece {
 
         protected String position;
 
-    protected void move() {
-    }
+
 
     public static enum Color{
             WHITE,
