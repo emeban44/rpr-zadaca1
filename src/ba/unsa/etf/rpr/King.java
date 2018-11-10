@@ -14,7 +14,8 @@ public class King extends ChessPiece{
 
     @Override
     public void move(String position) throws IllegalChessMoveException, IllegalArgumentException {
-        if (!ValidnostPozicije(position)) throw new IllegalArgumentException();
+        super.move(position);
+    //  if (!ValidnostPozicije(position)) throw new IllegalArgumentException();
 
         //pomjeranje udesno
         if (this.position.charAt(0)+1==position.charAt(0) && this.position.charAt(1)==position.charAt(1)){

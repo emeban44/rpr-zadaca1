@@ -10,7 +10,8 @@ public class Bishop extends ChessPiece {
 
     @Override
     public void move(String position) throws IllegalChessMoveException {
-        if (!ValidnostPozicije(position)) throw new IllegalArgumentException();
+        super.move(position);
+        //  if (!ValidnostPozicije(position)) throw new IllegalArgumentException();
 
         boolean provjera=false;
         for (int i = 1; i<=8; i++){
